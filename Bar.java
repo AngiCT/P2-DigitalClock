@@ -26,7 +26,7 @@ class Bar {
 	//Ilumina el led indicado por value en la barra, contando desde 0
 	// de izquierda a derecha.
 	public void render (int value) {
-		throw new UnsupportedOperationException("A implementar en el paso Step2");
+		leds[value].on();
 	}
 
 }

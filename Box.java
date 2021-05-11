@@ -80,11 +80,22 @@ public class Box {
 
 		return distributeHorizontally;
 	}
+	/* Distribuye de forma uniforme el espacio indicado en la caja
+	(Box) del objeto receptor en tantas cajas como indique numRows.
+	Las cajas resultantes están colocadas verticalmente de forma
+	contigua. Se devuelve el vector de referencias a esas cajas.
+	*/
 
 	public Box[] distributeVertically (int numRows) {
 		assert numRows > 0;
+		double altoCajas = this.height/numRows;
+		Box[] distributeVertically = new Box[numRows];
+		for(int i = 0; i < numRows; i++) {
+			Box box = new Box(0, altoCajas*i, altoCajas, this.width);
+			distributeVertically[i] = box;
+		}
 
-		throw new UnsupportedOperationException("A implementar en el paso Step3");
+		return distributeVertically;
 	}
 
 	public Box[] splitTopBottom (double ratio) {
