@@ -2,20 +2,29 @@ import acm.graphics.GCanvas;
 
 public class DecimalNumber {
 
+	private DecimalDigit[] digits;
+
 	public DecimalNumber (int numDigits, Box dnBox) {
 		assert numDigits > 0;
 
-		throw new UnsupportedOperationException("A implementar en el paso Step5");
+		Box[] cajas = dnBox.distributeHorizontally(numDigits);
+		this.digits = new DecimalDigit[cajas.length];
+		for(int i = 0; i < cajas.length; i++) {
+			this.digits[i] = new DecimalDigit(cajas[i]);
+		}
 	}
 
 	public void addToGCanvas (GCanvas gCanvas) {
-		throw new UnsupportedOperationException("A implementar en el paso Step5");
+		for(int i = 0; i < digits.length; i++) {
+			digits[i].addToGCanvas(gCanvas);
+		}
 	}
 
 	public void render (int number) {
 		assert number >= 0;
-
-		throw new UnsupportedOperationException("A implementar en el paso Step5");
+		for (int i = 0; i < digits.length; i++){
+			digits[i].render(number);
+		}
 	}
 
 }
