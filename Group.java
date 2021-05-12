@@ -13,18 +13,28 @@ class Group {
 		Box[] barras = groupBox.distributeVertically(sizes.length);
 		this.bar = new Bar[sizes.length];
 		for(int i = 0; i < sizes.length; i++){
-			this.bar[i] = new Bar(sizes.length, barras[i]);
+			this.bar[i] = new Bar(sizes[i], barras[i]);
 		}
 	}
-
+	
+	// Añade todos los leds que forman la barra al canvas gCanvas
 	public void addToGCanvas (GCanvas gCanvas) {
 		for(int i = 0; i < bar.length; i++) {
 			bar[i].addToGCanvas(gCanvas);
 		}
 	}
 
+	/* Muestra, en cada una de las barras del grupo, el valor
+	correspondiente del array values.
+	El orden de los elementos en el vector values es de abajo hacia
+	arriba. De esta manera, si queréis mostrar el valor de un número a
+	partir de sus cifras, la cifra correspondiente a las unidades
+	estará en la posición 0 del vector values.
+	*/
 	public void render (int[] values) {
-		throw new UnsupportedOperationException("A implementar en el paso Step3");
+		for (int i = 0; i < bar.length; i++){
+			bar[i].render(values[values.length-1-i]);
+		}
 	}
 
 }

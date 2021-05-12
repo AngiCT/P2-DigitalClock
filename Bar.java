@@ -26,7 +26,14 @@ class Bar {
 	//Ilumina el led indicado por value en la barra, contando desde 0
 	// de izquierda a derecha.
 	public void render (int value) {
-		leds[value].on();
+		for (int i = 0; i < leds.length; i++){
+			if(i == value){
+				leds[i].on();
+			}
+			else{
+				leds[i].off();
+			}
+		}
 	}
 
 }

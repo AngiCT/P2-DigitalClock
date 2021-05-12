@@ -74,7 +74,7 @@ public class Box {
 
 		Box[] distributeHorizontally = new Box[numColumns];
 		for(int i = 0; i < numColumns; i++) {
-			Box box = new Box(anchoCajas*i, 0, this.height, anchoCajas);
+			Box box = new Box(anchoCajas*i, this.y, anchoCajas, this.height);
 			distributeHorizontally[i] = box;
 		}
 
@@ -91,7 +91,7 @@ public class Box {
 		double altoCajas = this.height/numRows;
 		Box[] distributeVertically = new Box[numRows];
 		for(int i = 0; i < numRows; i++) {
-			Box box = new Box(0, altoCajas*i, altoCajas, this.width);
+			Box box = new Box(this.x, altoCajas*i, this.width, altoCajas);
 			distributeVertically[i] = box;
 		}
 
