@@ -23,7 +23,7 @@ public class DecimalNumber {
 	public void render (int number) {
 		assert number >= 0;
 		for (int i = 0; i < digits.length; i++){
-			digits[i].render(number);
+				digits[i].render(number);
 		}
 	}
 
