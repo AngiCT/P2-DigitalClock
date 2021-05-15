@@ -22,8 +22,9 @@ public class DecimalNumber {
 
 	public void render (int number) {
 		assert number >= 0;
-		for (int i = 0; i < digits.length; i++){
-				digits[i].render(number);
+		for (int i = digits.length-1; i >= 0; i--){
+				digits[i].render(number%10);
+				number=number/10;
 		}
 	}
 

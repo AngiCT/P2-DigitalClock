@@ -101,7 +101,13 @@ public class Box {
 	public Box[] splitTopBottom (double ratio) {
 		assert 0.0 <= ratio && ratio <= 1.0;
 
-		throw new UnsupportedOperationException("A implementar en el paso ClockProgram");
+		double alto1 = this.height*ratio;
+		double alto2 = this.height-(alto1);
+		Box[] splitTopBottom = new Box[2];
+		splitTopBottom[0] = new Box(this.x, this.y, this.width, alto1);
+		splitTopBottom[1] = new Box(this.x, this.y + alto1, this.width, alto2+20);
+
+		return splitTopBottom;
 	}
 
 }
