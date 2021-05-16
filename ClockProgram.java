@@ -1,3 +1,5 @@
+//Ángela Calvo Tejedor y Jonathan Martínez.
+
 import acm.program.GraphicsProgram;
 import java.awt.Color;
 
